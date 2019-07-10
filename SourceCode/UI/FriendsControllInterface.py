@@ -65,7 +65,7 @@ class FriendsControllInterface(QWidget, Ui_FriendsControllInterface):
     param[msg_content]:原生消息json报文
     """
     def set_friend(self, msg):
-        msg_handler = ChatMessageHandler(msg)
+        msg_handler = PrivateMessageHandler(msg)
         friend_id = msg_handler.get_current_user()
         msg_content = msg_handler.get_content()
         friend_remark_name = msg_handler.get_remark_name()
@@ -110,7 +110,7 @@ class FriendsControllInterface(QWidget, Ui_FriendsControllInterface):
         try:
             friend_bar = self.__Friend_Bar[GlobalVariable.CurrentFriendId]
             friend_bar.set_not_selected()
-        except Exception as e:
+        except:
             pass
         GlobalVariable.CurrentFriendId = friend_id
         self.click_friend_signal.emit(friend_id)

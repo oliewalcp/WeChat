@@ -3,6 +3,8 @@ from UI.FriendsControllInterface import *
 from UI.ChatRecordInterface import *
 from PyQt5.QtCore import pyqtSlot, pyqtSignal
 
+
+# 应用程序主窗口
 class MainWindow(QMainWindow, Ui_MainWindow):
 
     exit_proc_signal = pyqtSignal()  # 退出程序信号

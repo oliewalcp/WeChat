@@ -3,9 +3,11 @@ from UI.Component.uiFriendBar import *
 from PyQt5.QtCore import pyqtSignal
 from Assist.GlobalVariable import GlobalVariable
 
+
+# 朋友列表的朋友
 class FriendBar(QWidget, Ui_FriendBar):
 
-    click_signal = pyqtSignal(str)
+    click_signal = pyqtSignal(str)  # 选中信号
 
     def __init__(self, current_id, parent=None):
         super(FriendBar, self).__init__(parent)
